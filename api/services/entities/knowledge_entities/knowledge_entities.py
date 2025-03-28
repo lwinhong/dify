@@ -95,7 +95,7 @@ class WeightKeywordSetting(BaseModel):
 
 
 class WeightModel(BaseModel):
-    weight_type: str
+    weight_type: Optional[str] = None
     vector_setting: Optional[WeightVectorSetting] = None
     keyword_setting: Optional[WeightKeywordSetting] = None
 
@@ -128,7 +128,6 @@ class KnowledgeConfig(BaseModel):
     embedding_model: Optional[str] = None
     embedding_model_provider: Optional[str] = None
     name: Optional[str] = None
-    metadata: Optional[MetaDataConfig] = None
 
 
 class SegmentUpdateArgs(BaseModel):
